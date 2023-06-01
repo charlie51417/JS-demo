@@ -6,7 +6,7 @@ def humanReadableTimer(seconds)
   hours = seconds/3600
   mins = (seconds/60) % 60
   sec = seconds % 60
-  return "#{hours.to_s.rjust(2, '0')}" + ":" + "#{mins.to_s.rjust(2, '0')}" + ":" + "#{sec.to_s.rjust(2, '0')}"
+  return "%02d:%02d:%02d" % [hours, mins, sec]
 end
   p humanReadableTimer(0) # 印出 00:00:00
   p humanReadableTimer(59) # 印出 00:00:59
